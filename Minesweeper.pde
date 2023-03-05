@@ -34,14 +34,6 @@ public void draw (){
         displayWinningMessage();
 }
 public boolean isWon(){
-  for(int r = 0; r<NUM_ROWS; r++){
-    for(int c = 0; c<NUM_COLS; c++){
-      if(buttons[r][c].clicked == false){
-    return true;
-  }
-    }
-  }
-  
     return false;
 }
 public void displayLosingMessage(){
