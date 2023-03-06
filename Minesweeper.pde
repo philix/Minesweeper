@@ -124,7 +124,7 @@ public class MSButton{
           }
           displayLosingMessage();
         }else if(countMines(myRow,myCol) > 0){
-          buttons[myRow][myCol].myLabel = Integer.toString(countMines(myRow,myCol));
+          buttons[myRow][myCol].myLabel = ""+(countMines(myRow,myCol));
         }else{
             if(isValid(myRow,myCol-1) && buttons[myRow][myCol-1].clicked == false){
               buttons[myRow][myCol-1].mousePressed();
