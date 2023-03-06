@@ -34,6 +34,17 @@ public void draw (){
         displayWinningMessage();
 }
 public boolean isWon(){
+  int count = 0;
+  for(int r = 0; r<NUM_ROWS; r++){
+    for(int c = 0; c<NUM_COLS; c++){
+      if(buttons[r][c].clicked == true){
+        count++;
+      }
+    }
+  }
+  if(count == 350){
+    return true;
+  }
     return false;
 }
 public void displayLosingMessage(){
@@ -124,7 +135,7 @@ public class MSButton{
           }
           displayLosingMessage();
         }else if(countMines(myRow,myCol) > 0){
-          buttons[myRow][myCol].myLabel = ""+(countMines(myRow,myCol));
+          buttons[myRow][myCol].myLabel = "" + (countMines(myRow,myCol));
         }else{
             if(isValid(myRow,myCol-1) && buttons[myRow][myCol-1].clicked == false){
               buttons[myRow][myCol-1].mousePressed();
